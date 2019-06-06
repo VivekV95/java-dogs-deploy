@@ -1,13 +1,7 @@
 package com.lambdaschool.dogsinitial
 
-import org.springframework.amqp.core.Binding
-import org.springframework.amqp.core.BindingBuilder
-import org.springframework.amqp.core.Queue
-import org.springframework.amqp.core.TopicExchange
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.context.annotation.Bean
 import org.springframework.web.servlet.DispatcherServlet
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
@@ -19,9 +13,9 @@ open class DogsinitialApplication {
     companion object {
         lateinit var ourDogList: DogList
 
-        val EXCHANGE_NAME = "LambdaServer"
+        /* val EXCHANGE_NAME = "LambdaServer"
         val QUEUE_NAME_LOW = "LowPriorityQueue"
-        val QUEUE_NAME_HIGH = "HighPriorityQueue"
+        val QUEUE_NAME_HIGH = "HighPriorityQueue" */
 
         @JvmStatic
         fun main(args: Array<String>) {
@@ -33,7 +27,7 @@ open class DogsinitialApplication {
         }
     }
 
-    @Bean
+    /* @Bean
     open fun appExchange(): TopicExchange {
         return TopicExchange(EXCHANGE_NAME)
     }
@@ -61,6 +55,6 @@ open class DogsinitialApplication {
     @Bean
     open fun produceJackson2MessageConverter(): Jackson2JsonMessageConverter {
         return Jackson2JsonMessageConverter()
-    }
+    } */
 
 }
